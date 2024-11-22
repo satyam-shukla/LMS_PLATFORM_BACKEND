@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Order Confirmation</title>
+    <style>
+        /* Reset and Font */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Main Container */
+        .container {
+            width: 60%;
+            margin: auto;
+            background-color: #fefefe;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            color: #444;
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #0052cc, #0077ff);
+            color: #fff;
+            padding: 25px 0;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        /* Order Info Section */
+        .order-info {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f3f7fc;
+            border-radius: 8px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .order-info div {
+            font-weight: bold;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th {
+            background-color: #0052cc;
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        td {
+            padding: 15px;
+            font-size: 15px;
+            color: #555;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Total Section */
+        .total-info {
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 16px;
+            color: #444;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: #0052cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Accent Styles */
+        .highlight {
+            color: #0077ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Your E-Learning Order is Confirmed!</h1>
+            <p>We’re thrilled to have you on board.</p>
+        </div>
+
+        <!-- Order Details -->
+        <div class="order-info">
+            <div>Order #: <span class="highlight"><%= order._id %></span></div>
+            <div>Order Date: <span class="highlight"><%= order.date %></span></div>
+        </div>
+
+        <!-- Order Items -->
+        <h2 style="color: #0052cc; font-size: 20px; margin-bottom: 10px;">Items in Your Order</h2>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td><%= order.name %></td>
+                <td>1</td>
+                <td>$<%= order.price %></td>
+            </tr>
+        </table>
+
+        <!-- Total Section -->
+        <div class="total-info">
+            <div>Subtotal:</div>
+            <div>$<%= order.price %></div>
+        </div>
+        <div class="total-info">
+            <div>Total:</div>
+            <div>$<%= order.price %></div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>If you have any questions, please contact our support team at 
+                <a href="mailto:satyam20@navgurukul.org">satyam20@navgurukul.org</a>.
+            </p>
+            <p>&copy; 2025 Ethos. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

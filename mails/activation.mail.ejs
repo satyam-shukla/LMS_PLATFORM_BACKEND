@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethos Activation Email</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .email-wrapper {
+      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+    }
+    .email-header {
+      background-color: #4CAF50;
+      padding: 30px;
+      text-align: center;
+    }
+    .email-header h1 {
+      color: #ffffff;
+      font-size: 28px;
+      margin: 0;
+    }
+    .email-body {
+      padding: 30px 40px;
+    }
+    .email-body p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555555;
+    }
+    .activation-code {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 24px;
+      color: #4CAF50;
+      font-weight: bold;
+      padding: 10px 0;
+      border: 1px dashed #4CAF50;
+      border-radius: 5px;
+    }
+    .email-footer {
+      background-color: #f7f7f7;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #dddddd;
+    }
+    .email-footer p {
+      font-size: 14px;
+      color: #777777;
+      margin: 0;
+    }
+    .email-footer a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <!-- Header Section -->
+    <div class="email-header">
+      <h1>Welcome to Ethos</h1>
+    </div>
+    
+    <!-- Body Section -->
+    <div class="email-body">
+      <p>Hi <strong><%= user.name %></strong>,</p>
+      <p>Thank you for joining Ethos! To complete your registration, please use the following activation code:</p>
+      <div class="activation-code">
+        <%= activationCode %>
+      </div>
+      <p>Enter this code on the activation page within the next 5 minutes to verify your account.</p>
+      <p style="font-size: 14px; color: #777;">If you didn't sign up for a Ethos account, you can safely ignore this email.</p>
+    </div>
+    
+    <!-- Footer Section -->
+    <div class="email-footer">
+      <p>If you have any questions, please don't hesitate to contact us at 
+        <a href="mailto:satyamcoderbhai@gmail.com">satyamcoderbhai@gmail.com</a>.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
